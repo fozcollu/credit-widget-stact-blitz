@@ -1,9 +1,9 @@
-import { Form, Input, Button, InputNumber, message, Row, Col } from 'antd';
+import { Form, Input, Button, InputNumber, message, Row, Col } from "antd";
 
-import React from 'react';
-import { MaturitySelect } from './components/MaturitySelect';
-import { NumberInput } from './components/NumberInput';
-import { useFormValidation } from './hooks/useValidation';
+import React from "react";
+import { MaturitySelect } from "./components/MaturitySelect";
+import { NumberInput } from "./components/NumberInput";
+import { useFormValidation } from "./hooks/useValidation";
 
 const formItemLayout = {
   labelCol: { xl: 24, md: 24, sm: 24 },
@@ -32,7 +32,7 @@ const KonutKrediForm = props => {
 
   function submit(values) {
     if (!validateCreditValue(values.creditValue, values.houseValue)) {
-      message.error('Kredi tutarı, ev değerinin %75’inden küçük olmalıdır');
+      message.error("Kredi tutarı, ev değerinin %75’inden küçük olmalıdır");
       return;
     }
     props.onSubmit(values);
@@ -51,7 +51,7 @@ const KonutKrediForm = props => {
     >
       <Row gutter={[8, 0]}>
         <Col {...colLayout}>
-          <Form.Item label="Ad" name="name" rules={[...nameRules('Ad')]}>
+          <Form.Item label="Ad" name="name" rules={[...nameRules("Ad")]}>
             <Input type="string" />
           </Form.Item>
         </Col>
@@ -59,7 +59,7 @@ const KonutKrediForm = props => {
           <Form.Item
             label="Soyad"
             name="surname"
-            rules={[...nameRules('Soyad')]}
+            rules={[...nameRules("Soyad")]}
           >
             <Input type="string" />
           </Form.Item>
@@ -67,17 +67,17 @@ const KonutKrediForm = props => {
       </Row>
 
       <Form.Item
-        label="TCKN"
+        label="TC Kimlik Numarası"
         name="tckn"
         rules={[
-          requiredRule('TC Kimlik Numarası'),
+          requiredRule("TC Kimlik Numarası"),
           {
             pattern: /^[1-9]{1}[0-9]{9}[02468]{1}$/,
-            message: 'TC kimlik numarası geçersiz.'
+            message: "TC kimlik numarası geçersiz."
           }
         ]}
       >
-        <InputNumber style={{ width: '100%' }} />
+        <InputNumber style={{ width: "100%" }} />
       </Form.Item>
 
       <Row gutter={[8, 0]}>
@@ -86,9 +86,9 @@ const KonutKrediForm = props => {
             label="Evin Değeri"
             name="houseValue"
             rules={[
-              requiredRule('Evin değerini'),
-              minRule('Evin Değeri', 1000),
-              maxRule('Evin Değeri', 1000000)
+              requiredRule("Evin değerini"),
+              minRule("Evin Değeri", 1000),
+              maxRule("Evin Değeri", 1000000)
             ]}
           >
             <NumberInput suffix="TL" />
@@ -99,9 +99,9 @@ const KonutKrediForm = props => {
             label="Kredi Tutarı"
             name="creditValue"
             rules={[
-              requiredRule('Kredi Tutarı'),
-              minRule('Kredi Tutarı', 1000),
-              maxRule('Kredi Tutarı', 1000000)
+              requiredRule("Kredi Tutarı"),
+              minRule("Kredi Tutarı", 1000),
+              maxRule("Kredi Tutarı", 1000000)
             ]}
           >
             <NumberInput suffix="TL" />
@@ -112,12 +112,12 @@ const KonutKrediForm = props => {
       <Form.Item
         label="Vade"
         name="maturityValue"
-        rules={[requiredRule('Kredi Tutarı')]}
+        rules={[requiredRule("Kredi Tutarı")]}
       >
         <MaturitySelect />
       </Form.Item>
 
-      <div style={{ textAlign: 'right' }}>
+      <div style={{ textAlign: "right" }}>
         <Button type="primary" htmlType="submit">
           Devam Et
         </Button>

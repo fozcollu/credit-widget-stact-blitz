@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body,
+html {
+  height: 100%;
+  display: grid;
+}
+
+#root {
+  background-color: #7aa697;
+}
+
+@media only screen and (max-width: 800px) {
+  .content {
+    background-color: #7aa697 !important;
+    background-image: none;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .content {
+    background-image: url('https://cmsandyou.com/wp-content/uploads/2018/09/looking-to-buy-card-1-community-mortgage-service-manchester-london-fee-free-advice-1.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.content {
+  height: 90vh;
+}
